@@ -2,7 +2,7 @@
 // Amazon affiliate links mapped to mythology categories
 // Replace YOUR_AFFILIATE_TAG with your actual Amazon Associates tag
 
-const TAG = 'codexmyth-20'; // Replace with your Amazon Associates tag
+const TAG = 'codexmythicum-20';
 
 // Books mapped by mythology keyword
 const BOOK_MAP = [
