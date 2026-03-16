@@ -62,9 +62,12 @@ function UpgradeCard({onDismiss, context}) {
         {['Unlimited AI creatures','Full archive access','Unlimited re-rolls','No ads'].map((l,i)=><span key={i} style={{fontSize:'0.78rem',color:'#5a9e6f',display:'flex',alignItems:'center',gap:'0.3rem'}}><span>&#10003;</span> {l}</span>)}
       </div>
       <div style={{display:'flex',gap:'0.6rem',flexWrap:'wrap',alignItems:'center'}}>
-        <button style={st.premiumBtn}>$1.99/month</button>
-        <button style={{...st.premiumBtn,background:'rgba(201,168,76,0.15)'}}>$14.99/year</button>
-        <span style={{fontSize:'0.72rem',color:'var(--text-muted)',fontStyle:'italic'}}>Coming soon</span>
+        <a href="https://codexmythicum.lemonsqueezy.com/checkout/buy/b9a9f3b7-b3ba-4dfd-bc1e-39fecb152a1c" target="_blank" rel="noopener noreferrer" style={{...st.premiumBtn,textDecoration:'none',display:'inline-block',textAlign:'center'}}>Upgrade to Premium</a>
+      </div>
+      <p style={{fontSize:'0.72rem',color:'var(--text-muted)',marginTop:'0.8rem',fontStyle:'italic'}}>After purchase, enter your license key below to activate.</p>
+      <div style={{display:'flex',gap:'0.5rem',marginTop:'0.5rem'}}>
+        <input type="text" placeholder="Enter license key..." style={{...st.promptInput,marginBottom:0,flex:1,fontSize:'0.82rem',padding:'0.5rem 0.7rem'}} id="license-key-input"/>
+        <button style={st.btn} onClick={()=>{const k=document.getElementById('license-key-input').value;if(k.trim()){localStorage.setItem('codex_mythicum_premium','true');window.location.reload();}}}>Activate</button>
       </div>
     </div>
   );
